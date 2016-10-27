@@ -27,7 +27,7 @@
 
 -(void)setFrame{
     //绘制密码9个按钮
-    _lockView = [[LockView alloc] initWithFrame:CGRectMake(30, 240, 350, 350) andHandleType:self.handleType];
+    _lockView = [[LockView alloc] initWithFrame:CGRectMake(0, 240, self.view.frame.size.width, 350) andHandleType:self.handleType];
     _lockView.delegate = self;
     [self.view addSubview:self.lockView];
     

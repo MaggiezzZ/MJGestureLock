@@ -9,6 +9,10 @@
 #import "CoreArchive.h"
 #import "LockView.h"
 
+
+
+
+
 @interface LockView ()
 @property(nonatomic, strong) UILabel *label;
 @property(nonatomic, assign) eHandlePasswordType handleType;

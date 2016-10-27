@@ -10,14 +10,16 @@
 #import "PasswordLineLayer.h"
 #import "PasswordPointLayer.h"
 
-
-#define PointRadius 35.0//圆半径
-#define PointBorderWidth 1.0//圆边框宽
-#define SmallPointRadius 6.0//小圆半径
-#define PointLeftMargin 20.0//起始margin
-#define PointTopMargin 20.0//起始margin
-#define PointBetweenMargin 40.0//间隔*2
-#define PathWidth 12.0//线宽
+//适配 iPhone6为基准
+#define AdaptX(x) [UIScreen mainScreen].bounds.size.width / 375 * x
+#define AdaptY(y) [UIScreen mainScreen].bounds.size.height / 667 * y
+#define PointRadius AdaptX(35.0)//圆半径
+#define PointBorderWidth AdaptX(1.0)//圆边框宽
+#define SmallPointRadius AdaptX(6.0)//小圆半径
+#define PointLeftMargin AdaptX(42.5)//起始margin
+#define PointTopMargin AdaptY(25.0)//起始margin
+#define PointBetweenMargin AdaptX(40.0)//间隔*2
+#define PathWidth AdaptX(12.0)//线宽
 #define PasswordMinLength 4//最短密码
 
 #define PasswordPointColor [UIColor clearColor]//圆颜色
