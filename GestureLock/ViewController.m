@@ -25,12 +25,13 @@
     self.button.backgroundColor = [UIColor redColor];
     [self viewRadius:_button radius:5.f];
     [self.view addSubview:self.button];
-    BOOL haspwd = [GestureLockViewController hasPassword];
-    [self buttonWithPassword:haspwd];
+    
 
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    BOOL haspwd = [GestureLockViewController hasPassword];
+    [self buttonWithPassword:haspwd];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -42,10 +43,12 @@
     if (hasPassword) {
         //修改密码
         [self.button setTitle:@"修改密码" forState:UIControlStateNormal];
+        [self.button removeTarget:self action:@selector(setPassword) forControlEvents:UIControlEventTouchUpInside];
         [self.button addTarget:self action:@selector(modifyPassword) forControlEvents:UIControlEventTouchUpInside];
     }else{
         //设置密码
         [self.button setTitle:@"设置密码" forState:UIControlStateNormal];
+        [self.button removeTarget:self action:@selector(modifyPassword) forControlEvents:UIControlEventTouchUpInside];
         [self.button addTarget:self action:@selector(setPassword) forControlEvents:UIControlEventTouchUpInside];
     }
 }
